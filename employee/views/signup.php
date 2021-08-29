@@ -26,7 +26,7 @@
 <hr>
 <br>
 <div class="login-form">
-    <form action="/index.php" method="post">
+    <form action="registrationCheck.php" method="post">
         <h2 class="text-center">Signup Panel<hr></h2>       
         <div class="form-group">
             <input type="text" class="form-control" placeholder="Username" name="username" required>
@@ -39,6 +39,9 @@
         </select><br>
         <div class="form-group">
             <input type="password" class="form-control" placeholder="Password" name="password" required>
+        </div><br>
+        <div class="form-group">
+            <input type="email" class="form-control" placeholder="email" name="email" required>
         </div><br>
         <div class="form-check">
             <input class="form-check-input" type="radio" name="accounttype" id="flexRadioDefault1" checked>
@@ -53,7 +56,7 @@
             </label>
         </div><br>
         <div class="form-group">
-            <button type="submit" class="btn btn-success">signin</button>
+            <input type="submit" value="signin" name="signin" class="btn btn-success">
             <a href="login">Login</a>
         </div>
     </form>
