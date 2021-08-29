@@ -26,10 +26,11 @@
 <hr>
 <br>
 <div class="login-form">
-    <form action="/index.php" method="post">
-        <h2 class="text-center">Log in Panel<hr></h2>       
+    <form action="loginCheck.php" method="post">
+        <h2 class="text-center">Login Panel<hr></h2>       
         <div class="form-group">
-            <input type="text" class="form-control" placeholder="Username" name="username" required>
+            <input type="text" class="form-control" placeholder="Username" name="username" >
+            <small><?php session_start(); echo $_SESSION['message'] ?? '' ?></small>
         </div><br>
         <div class="form-group">
             <input type="password" class="form-control" placeholder="Password" name="password" required>
@@ -47,7 +48,7 @@
             </label>
         </div><br>
         <div class="form-group">
-            <button type="submit" class="btn btn-success">Log in</button>
+            <input type="submit" value="login" name="login" class="btn btn-success">
             <a href="signup">Create New Account</a>
         </div>
     </form>
