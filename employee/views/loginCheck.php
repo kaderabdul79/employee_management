@@ -1,18 +1,24 @@
 <?php
+// echo "hi";
+
+// echo $accountType;
 session_start();
 
 if(isset($_POST['login'])){
     
     $password = $_POST['password'];
     $username = $_POST['username'];
+    $accountType = $_POST['accountType'];
     
-        if($username == "" || $password == ""){
+        if($username == "" && $password == ""){
             echo "enter all field";
         }else{
-            if($username == $_SESSION['username']){
-                header('Location: homepage.php');
+            if($username == ""){
+                echo "enter username";
+            }elseif($password == ""){
+                echo "enter password";
             }else{
-                echo "you have no account";
+                header('Location: homepage.php');
             }
         }
 

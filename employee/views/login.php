@@ -30,7 +30,6 @@
         <h2 class="text-center">Login Panel<hr></h2>       
         <div class="form-group">
             <input type="text" class="form-control" placeholder="Username" name="username" >
-            <small><?php session_start(); echo $_SESSION['message'] ?? '' ?></small>
         </div><br>
         <div class="form-group">
             <input type="password" class="form-control" placeholder="Password" name="password" required>

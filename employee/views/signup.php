@@ -26,10 +26,16 @@
 <hr>
 <br>
 <div class="login-form">
-    <form action="registrationCheck.php" method="post">
+    <form action="signupCheck.php" method="post">
         <h2 class="text-center">Signup Panel<hr></h2>       
         <div class="form-group">
-            <input type="text" class="form-control" placeholder="Username" name="username" required>
+            <input type="text" class="form-control" placeholder="Username" name="username">
+        </div><br>
+        <div class="form-group">
+            <input type="password" class="form-control" placeholder="Password" name="password">
+        </div><br>
+        <div class="form-group">
+            <input type="email" class="form-control" placeholder="email" name="email">
         </div><br>
         <select class="form-select" aria-label="Default select example" name="department">
             <option selected>select department</option>
@@ -37,12 +43,6 @@
             <option value="2">Management</option>
             <option value="3">Finance</option>
         </select><br>
-        <div class="form-group">
-            <input type="password" class="form-control" placeholder="Password" name="password" required>
-        </div><br>
-        <div class="form-group">
-            <input type="email" class="form-control" placeholder="email" name="email" required>
-        </div><br>
         <div class="form-check">
             <input class="form-check-input" type="radio" name="accounttype" id="flexRadioDefault1" checked>
             <label class="form-check-label" for="flexRadioDefault1">
@@ -56,7 +56,7 @@
             </label>
         </div><br>
         <div class="form-group">
-            <input type="submit" value="signin" name="signin" class="btn btn-success">
+            <input type="submit" value="signup" name="signup" class="btn btn-success">
             <a href="login">Login</a>
         </div>
     </form>

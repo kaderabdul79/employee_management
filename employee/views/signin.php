@@ -26,22 +26,22 @@
 <hr>
 <br>
 <div class="login-form">
-    <form action="/index.php" method="post">
+    <form action="../Views/loginCheck.php" method="post">
         <h2 class="text-center">Log in Panel<hr></h2>       
         <div class="form-group">
-            <input type="text" class="form-control" placeholder="Username" name="username" required>
+            <input type="text" class="form-control" placeholder="Username" name="username">
         </div><br>
         <div class="form-group">
-            <input type="password" class="form-control" placeholder="Password" name="password" required>
+            <input type="password" class="form-control" placeholder="Password" name="password">
         </div><br>
         <div class="form-group">
             <select name="accountType" class="form-control">
-            	<option value="donor">Employee</option>
+            	<option value="employee">Employee</option>
             	<option value="admin">Admin</option>
             </select>
         </div><br>
         <div class="form-group">
-            <button type="submit" class="btn btn-success">Log in</button>
+            <input type="submit" value="login" name="login" class="btn btn-success">
             <a href="signup">Create New Account</a>
         </div>
     </form>
