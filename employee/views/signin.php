@@ -42,7 +42,7 @@
         </div><br>
         <div class="form-group">
             <input type="submit" value="login" name="login" class="btn btn-success">
-            <a href="signup">Create New Account</a>
+            <a href="signup.php">Create New Account</a>
         </div>
     </form>
 </div>

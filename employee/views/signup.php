@@ -43,21 +43,38 @@
             <option value="2">Management</option>
             <option value="3">Finance</option>
         </select><br>
-        <div class="form-check">
-            <input class="form-check-input" type="radio" name="accounttype" id="flexRadioDefault1" checked>
-            <label class="form-check-label" for="flexRadioDefault1">
+
+        <?php 
+        session_start();
+        $accounttypes = [
+	'admin' => 'Admin',
+	'employee' => 'Employee'
+];
+?>
+<?php foreach ($accounttypes as $key => $value) : ?>
+<div class="form-check">
+    <input class="form-check-input" type="radio" name="accounttype" id="Radio1<?php echo $key ?>" value="<?php echo $key ?>" />
+            <label class="form-check-label" for="Radio1<?php echo $key ?>">
+                <?php echo $value ?>
+                <?php $_SESSION['ss'] = $value; ?>
+    </label><br>
+</div>
+<?php endforeach ?>
+
+
+        <!-- <div class="form-check">
+            <input class="form-check-input" type="radio" name="accounttype" id="Radio1">
+            <label class="form-check-label" for="Radio1">
                 Employee
-            </label>
-            </div>
-            <div class="form-check">
-            <input class="form-check-input" type="radio" name="accounttype" id="flexRadioDefault2">
-            <label class="form-check-label" for="flexRadioDefault2">
+            </label><br>
+            <input class="form-check-input" type="radio" name="accounttype" id="Radio2">
+            <label class="form-check-label" for="Radio2">
                 Admin
             </label>
-        </div><br>
+        </div><br> -->
         <div class="form-group">
             <input type="submit" value="signup" name="signup" class="btn btn-success">
-            <a href="login">Login</a>
+            <a href="signin.php">Login</a>
         </div>
     </form>
 </div>
