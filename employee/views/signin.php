@@ -34,11 +34,15 @@
         <div class="form-group">
             <input type="password" class="form-control" placeholder="Password" name="password">
         </div><br>
-        <div class="form-group">
-            <select name="accountType" class="form-control">
-            	<option value="employee">Employee</option>
-            	<option value="admin">Admin</option>
-            </select>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="accounttype" value="employee" id="Radio1">
+            <label class="form-check-label" for="Radio1">
+                Employee
+            </label><br>
+            <input class="form-check-input" type="radio" name="accounttype" value="admin" id="Radio2">
+            <label class="form-check-label" for="Radio2">
+                Admin
+            </label>
         </div><br>
         <div class="form-group">
             <input type="submit" value="login" name="login" class="btn btn-success">

@@ -1,11 +1,13 @@
 <?php
 
+session_start();
 if(isset($_POST['login'])){
     
     $password = $_POST['password'];
     $username = $_POST['username'];
-    $accountType = $_POST['accountType'];
     
+    if(isset($_POST['accounttype'])){
+        $accounttype = $_POST['accounttype'];
         if($username == "" && $password == ""){
             echo "enter all field";
         }else{
@@ -13,11 +15,16 @@ if(isset($_POST['login'])){
                 echo "enter username";
             }elseif($password == ""){
                 echo "enter password";
-            }else{
+            }elseif($_SESSION['userdata']['username'] == $username && $_SESSION['userdata']['password'] == $password && $_SESSION['userdata']['accounttype'] == $accounttype){
                 header('Location: homepage.php');
+            }else{
+                echo "Wrong credential!";
             }
         }
-
+    }else{
+        echo "please, select the Account type";
+    }
+    
 }else{
     echo "invalid request"; 
 }
