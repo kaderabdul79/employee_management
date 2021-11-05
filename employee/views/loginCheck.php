@@ -15,8 +15,13 @@ if(isset($_POST['login'])){
                 echo "enter username";
             }elseif($password == ""){
                 echo "enter password";
-            }elseif($_SESSION['userdata']['username'] == $username && $_SESSION['userdata']['password'] == $password && $_SESSION['userdata']['accounttype'] == $accounttype){
-                header('Location: homepage.php');
+            }elseif(isset($_SESSION['userdata'])){
+                if($_SESSION['userdata']['username'] == $username && $_SESSION['userdata']['password'] == $password && $_SESSION['userdata']['accounttype'] == $accounttype){
+                    header('Location: homepage.php');
+                }else{
+                    header('location: signin.php');
+                }
+                
             }else{
                 echo "Wrong credential!";
             }
