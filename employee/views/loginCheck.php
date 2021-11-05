@@ -1,8 +1,4 @@
 <?php
-// echo "hi";
-
-// echo $accountType;
-session_start();
 
 if(isset($_POST['login'])){
     
