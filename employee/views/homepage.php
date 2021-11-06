@@ -8,6 +8,7 @@
     <title>Document</title>
 </head>
 <body>
-    <h2>Hello <?php session_start(); echo $_SESSION['username']; ?></h2>
+    <!-- <h2>Hello <?php session_start(); echo $_SESSION['username']; ?></h2> -->
+    <h2>Hello</h2>
 </body>
 </html>
