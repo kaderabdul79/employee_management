@@ -1,6 +1,7 @@
 <?php
 
 session_start();
+require_once('db.php');
 if(isset($_POST['login'])){
     
     $password = $_POST['password'];
@@ -20,7 +21,18 @@ if(isset($_POST['login'])){
                 $_SESSION['username'] = $username;
                 $_SESSION['password'] = $password;
                 $_SESSION['accounttype'] = $accounttype;
-                header('Location: homepage.php');
+                $conn = getConnection();
+                $sql = "select * from users where username='$username' and password='$password' and accounttype='$accounttype'";
+                $result = mysqli_query($conn,$sql);
+                $row = mysqli_fetch_assoc($result);
+                if($row){
+                    header('Location: homepage.php');
+
+                }else{
+                    echo "Info is wrong! try again";
+
+                }
+                
             }
             else{
                 echo "Wrong credential!";
