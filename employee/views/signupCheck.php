@@ -1,6 +1,7 @@
 <?php
 
 session_start();
+require_once('db.php');
 if(isset($_POST['signup'])){
     $username = $_POST['username'];
     $password = $_POST['password'];
@@ -23,14 +24,22 @@ if(isset($_POST['signup'])){
             }elseif($accounttype == ""){
                 echo "select accounttype";
             }else{
-                $_SESSION['userdata'] = [
+                $userinfo = [
                     'username' => $username,
                     'password' => $password,
                     'email' => $email,
                     'department' => $department,
-                    'accounttype' => $accounttype,
+                    'accounttype' => $accounttype
                 ];
-                header('Location: signin.php');
+                $conn = getConnection();
+                $sql = "insert into users values('','{$userinfo['username']}','{$userinfo['password']}','{$userinfo['email']}','{$userinfo['department']}','{$userinfo['accounttype']}')";
+                // print_r($sql);
+                if(mysqli_query($conn,$sql)){
+                    header('Location: signin.php');
+                }else{
+                    echo "failed to insert";
+                }
+                
             }
         }
     }else{

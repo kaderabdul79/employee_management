@@ -39,9 +39,9 @@
         </div><br>
         <select class="form-select" aria-label="Default select example" name="department">
             <option selected>select department</option>
-            <option value="1">Account</option>
-            <option value="2">Management</option>
-            <option value="3">Finance</option>
+            <option value="account">Account</option>
+            <option value="management">Management</option>
+            <option value="finance">Finance</option>
         </select><br>
         <div class="form-check">
             <input class="form-check-input" type="radio" name="accounttype" value="employee" id="Radio1">
