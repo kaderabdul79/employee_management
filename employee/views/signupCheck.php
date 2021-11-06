@@ -1,6 +1,6 @@
 <?php
 
-session_start();
+// session_start();
 require_once('db.php');
 if(isset($_POST['signup'])){
     $username = $_POST['username'];

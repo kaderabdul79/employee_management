@@ -21,8 +21,10 @@
                 <button type="button" class="btn btn-light">Light</button>
                 <button type="button" class="btn btn-dark">Dark</button>
                 <button type="button" class="btn btn-link">Link</button>
+                <br>
+                <button type="button" class="btn btn-warning"><a href="logout.php">Logout</a></button>
             </div>
-            <a href="logout.php">Logout</a>
+            
         </div>
     </div>
     
