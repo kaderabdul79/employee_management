@@ -44,4 +44,4 @@ $sql = "select * from users where accounttype='employee'";
 </table>        
                          
 
-<?php include('footer.html'); ?>
+<?php include('footer.php'); ?>

@@ -1,4 +1,7 @@
-<?php include('master.php'); ?>
+<?php 
+ session_start(); 
+ include('master.php'); ?>
+<?php include('header.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +15,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h2>Hello <?php session_start(); echo $_SESSION['username']; ?></h2>
+                <!-- <h2>Hello <?php echo $_SESSION['username']; ?></h2> -->
                 <button type="button" class="btn btn-info"><a href="viewProfile.php">View Profile</a></button>
                 <button type="button" class="btn btn-info"><a href="viewEmployees.php">View Employees</a></button>
             </div>
