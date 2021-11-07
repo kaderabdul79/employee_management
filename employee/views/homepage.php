@@ -14,7 +14,7 @@
             <div class="col-md-12">
                 <h2>Hello <?php session_start(); echo $_SESSION['username']; ?></h2>
                 <button type="button" class="btn btn-info"><a href="viewProfile.php">View Profile</a></button>
-
+                <button type="button" class="btn btn-info"><a href="viewEmployees.php">View Employees</a></button>
             </div>
         </div>
     </div>
