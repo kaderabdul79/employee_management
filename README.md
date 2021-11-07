@@ -1,2 +1,2 @@
-Employee Management Project using Procedural PHP.
-##this is the self learning Project
+# Employee Management Project using Procedural PHP.
+## This is the Self Practing and learning Project
