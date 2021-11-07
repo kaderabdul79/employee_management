@@ -34,8 +34,8 @@ $sql = "select * from users where accounttype='employee'";
              <td><?php echo $employeesInfo[$i]['department'] ?></td>
              <td><?php echo $employeesInfo[$i]['accounttype'] ?></td>
              <td>
-                 <button type="button" class="btn btn-info"><a href="employeeProfile.php">View Profile</a></button>
-                 <button type="button" class="btn btn-info"><a href="viewProfile.php">Update Profile</a></button>
+                 <button type="button" class="btn btn-info"><a href="viewDetailsMyProfile.php">View Profile</a></button>
+                 <button type="button" class="btn btn-info"><a href="viewOwnProfile.php">Update Profile</a></button>
                 <button type="button" class="btn btn-danger"><a href="deleteAccount.php">Delete Account</a></button>
              </td>
              <td>

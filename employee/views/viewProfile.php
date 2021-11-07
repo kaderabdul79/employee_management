@@ -30,7 +30,7 @@ $row = mysqli_fetch_assoc($result);
              <td><?= $row['department']; ?></td>
              <td><?= $row['accounttype']; ?></td>
              <td>
-                 <button type="button" class="btn btn-info"><a href="viewOwnProfile.php">View Details</a></button>
+                 <button type="button" class="btn btn-info"><a href="viewDetailsMyProfile.php">View Details</a></button>
                  <button type="button" class="btn btn-info"><a href="viewProfile.php">Update Profile</a></button>
                  <button type="button" class="btn btn-danger"><a href="deleteAccount.php">Delete Account</a></button>
              </td>
