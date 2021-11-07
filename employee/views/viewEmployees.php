@@ -1,7 +1,7 @@
 <?php 
 require_once('db.php');
 include('master.php');
-// include('master.css');
+include('header.php');
 $conn = getConnection();
 $sql = "select * from users where accounttype='employee'";
 		$result = mysqli_query($conn, $sql);

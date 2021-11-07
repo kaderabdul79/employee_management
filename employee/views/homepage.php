@@ -14,8 +14,15 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-md-12">
-                <!-- <h2>Hello <?php echo $_SESSION['username']; ?></h2> -->
+            <div class="col-md-8">
+                <?php include('post.php'); ?>
+            </div>
+            <div class="col-md-4">
+                <div class="card-body" id="post">
+                <h5 class="card-title">Notices</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
                 <button type="button" class="btn btn-info"><a href="viewProfile.php">View Profile</a></button>
                 <button type="button" class="btn btn-info"><a href="viewEmployees.php">View Employees</a></button>
             </div>

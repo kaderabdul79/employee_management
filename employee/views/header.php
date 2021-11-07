@@ -14,7 +14,8 @@
                     <input class=" mr-sm-22" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                     </form>
-                    <li><?php echo "Hello"." ".$_SESSION['username']; ?>
+                    <li>
+                        <!-- <?php echo "Hello"." ".$_SESSION['username']; ?> -->
                         <button type="button" class="btn btn-warning"><a class="" href="logout.php">Logout</a></button>
                     </li>
                     </ul>
