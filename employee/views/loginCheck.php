@@ -17,10 +17,17 @@ if(isset($_POST['login'])){
             }elseif($password == ""){
                 echo "enter password";
             }elseif(isset($username,$password)){
+                // using sessions
                 $_SESSION['flag'] = true;
                 $_SESSION['username'] = $username;
                 $_SESSION['password'] = $password;
                 $_SESSION['accounttype'] = $accounttype;
+                // using cookies
+                setcookie('username', $username, time()+3600, '/');
+				setcookie('password', $password, time()+3600, '/');
+				setcookie('accounttype', $accounttype, time()+3600, '/');
+                setcookie('flag', 'true', time()+3600, '/');
+
                 $conn = getConnection();
                 $sql = "select * from users where username='$username' and password='$password' and accounttype='$accounttype'";
                 $result = mysqli_query($conn,$sql);

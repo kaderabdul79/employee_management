@@ -2,6 +2,7 @@
 session_start();
 require_once('db.php');
 include('master.php');
+include('header.php');
 $conn = getConnection();
 $username = $_SESSION['username'];
 $password = $_SESSION['password'];
@@ -40,3 +41,4 @@ $row = mysqli_fetch_assoc($result);
 </div>
 </div>
 </div>
+<?php include('footer.php'); ?>
