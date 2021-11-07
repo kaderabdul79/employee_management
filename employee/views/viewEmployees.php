@@ -43,3 +43,5 @@ $sql = "select * from users where accounttype='employee'";
   </tbody>
 </table>        
                          
+
+<?php include('footer.html'); ?>
