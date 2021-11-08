@@ -25,7 +25,7 @@ $row = mysqli_fetch_assoc($result);
     <li class="list-group-item"><b>Password</b> :<?= $row['password']; ?></li>
   </ul>
   <div class="card-body">
-    <button type="button" class="btn btn-info"><a href="viewOwnProfile.php">Edit Profile</a></button><br><br>
+    <button type="button" class="btn btn-info"><a href='editOwnProfile.php?id=<?= $row['id']; ?>'>Edit Profile</a></button><br><br>
     <button type="button" class="btn btn-info"><a href="viewOwnProfile.php">Download Salary File</a></button>
   </div>
 </div><style>
