@@ -1,5 +1,6 @@
 
 <?php
+session_start();
 $id = $_GET['id'];
 require_once('db.php');
 if(isset($_POST['EditProfile'])){
@@ -33,10 +34,10 @@ if(isset($_POST['EditProfile'])){
                 $conn = getConnection();
                 $sql = "update users set username='{$userinfo['username']}',password='{$userinfo['password']}',email='{$userinfo['email']}',department='{$userinfo['department']}',accounttype='{$userinfo['accounttype']}' where id='{$id}'";
                 if(mysqli_query($conn,$sql)){
-                    // $_SESSION['username'] = $username;
-                    // $_SESSION['password'] = $password;
-                    // $_SESSION['accounttype'] = $accounttype;
-                    header('Location: signin.php');
+                    $_SESSION['username'] = $username;
+                    $_SESSION['password'] = $password;
+                    $_SESSION['accounttype'] = $accounttype;
+                    header('Location: homepage.php');
                 }else{
                     echo "failed to insert";
                 }
