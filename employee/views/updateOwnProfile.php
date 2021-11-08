@@ -32,9 +32,11 @@ if(isset($_POST['EditProfile'])){
                 ];
                 $conn = getConnection();
                 $sql = "update users set username='{$userinfo['username']}',password='{$userinfo['password']}',email='{$userinfo['email']}',department='{$userinfo['department']}',accounttype='{$userinfo['accounttype']}' where id='{$id}'";
-                 print_r($sql);
                 if(mysqli_query($conn,$sql)){
-                    header('Location: homepage.php');
+                    // $_SESSION['username'] = $username;
+                    // $_SESSION['password'] = $password;
+                    // $_SESSION['accounttype'] = $accounttype;
+                    header('Location: signin.php');
                 }else{
                     echo "failed to insert";
                 }
