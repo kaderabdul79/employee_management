@@ -2,15 +2,13 @@
 require_once('db.php');
 $id = $_GET['id'];
 $conn = getConnection();
-$sql = "delete * from users where where id='$id'";
+$sql = "delete from users where id='$id'";
 $result = mysqli_query($conn,$sql);
 if($result)
 	{
-        //echo "ok";
-        header('location: viewEmployees.php');
+        header('location: signup.php');
 	}
 	else
 	{
-        //echo "srry";
         header('location: viewEmployees.php?Not deleted your info');
 	}    

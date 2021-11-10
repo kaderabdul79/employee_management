@@ -1,15 +1,15 @@
 <?php
 require_once('db.php');
-$id = $_GET['id'];
 $conn = getConnection();
-$sql = "delete from users where where id='$id'";
+$id = $_GET['id'];
+$sql = "delete from users where id='$id'";
 $result = mysqli_query($conn,$sql);
-if($result)
+
+if(mysqli_query($conn,$sql))
 	{
         header('location: viewEmployees.php');
 	}
 	else
 	{
-        echo "srry";
-        //header('location: viewEmployees.php?Not deleted your info');
-	}    
+        header('location: viewEmployees.php');
+	}   
