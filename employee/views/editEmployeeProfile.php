@@ -30,7 +30,7 @@ $row = mysqli_fetch_assoc($result);
   <br><div class="form-group col-md-8">
       <select id="inputState" class="form-control" name="department">
         <!-- value=<?= $row['department']; ?> -->
-            <option selected >select department</option>
+            <option <?= $row['department']; ?> selected ><?= $row['department']; ?></option>
             <option value="account">Account</option>
             <option value="management">Management</option>
             <option value="finance">Finance</option>
@@ -38,7 +38,7 @@ $row = mysqli_fetch_assoc($result);
     </div><br>
 <!-- dropdown for department end -->
     Accounttype <div class="form-check">
-            <input class="form-check-input" type="radio" name="accounttype" value="employee" id="Radio1">
+            <input class="form-check-input" selected type="radio" name="accounttype" value="employee" id="Radio1">
             <label class="form-check-label" for="Radio1">
                 <?= $row['accounttype']; ?>
             </label><br>

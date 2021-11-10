@@ -3,6 +3,12 @@
 session_start();
 $id = $_GET['id'];
 require_once('db.php');
+$id = $_GET['id'];
+$conn = getConnection();
+$sql = "select * from users where id='$id'";
+$result = mysqli_query($conn,$sql);
+$row = mysqli_fetch_assoc($result);
+
 if(isset($_POST['EditProfile'])){
     $username = $_POST['username'];
     $password = $_POST['password'];
@@ -10,6 +16,10 @@ if(isset($_POST['EditProfile'])){
     $department = $_POST['department'];
     if(isset($_POST['accounttype'])){
         $accounttype = $_POST['accounttype'];
+    }else{
+        $accounttype = $row['accounttype'];
+    }
+    
         if($username == "" && $password == "" && $email == "" && $department == "" && $accounttype == ""){
             echo "enter all field";
         }else{
@@ -21,8 +31,6 @@ if(isset($_POST['EditProfile'])){
                 echo "enter email";
             }elseif($department == ""){
                 echo "enter department";
-            }elseif($accounttype == ""){
-                echo "select accounttype";
             }else{
                 $userinfo = [
                     'username' => $username,
@@ -44,9 +52,6 @@ if(isset($_POST['EditProfile'])){
                 
             }
         }
-    }else{
-        echo "please, select the Account type";
-    }
     
 }else{
     echo "invalid request"; 
