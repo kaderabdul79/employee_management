@@ -54,7 +54,7 @@ $row = mysqli_fetch_assoc($result);
     </div>
     </div>
     <div class="form-group">
-            Upload Picture <br><input type="file" accept="image/png, image/jpeg" name="picture" id="picture" value="">
+            Upload Picture <br><input type="file" accept="image/png, image/jpeg" name="picture" id="picture" value="<?= $row['picture']; ?>">
     </div><br>
   <!-- end radio button -->
   <div class="form-check">

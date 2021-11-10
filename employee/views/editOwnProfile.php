@@ -31,9 +31,9 @@ $row = mysqli_fetch_assoc($result);
   </div>
 <!-- dropdown for department -->
   <br><div class="form-group col-md-8">
-      <select id="inputState" class="form-control" name="department" required>
+      <select id="inputState" class="form-control" name="department">
         <!-- value=<?= $row['department']; ?> -->
-            <option selected >select department</option>
+            <option <?= $row['department']; ?> selected ><?= $row['department']; ?></option>
             <option value="account">Account</option>
             <option value="management">Management</option>
             <option value="finance">Finance</option>
@@ -61,7 +61,7 @@ $row = mysqli_fetch_assoc($result);
     </div>
   <!-- end radio button -->
   <div class="form-group">
-            Upload Picture <br><input type="file" accept="image/png, image/jpeg" name="picture" id="picture" value="">
+            Upload Picture <br><input type="file" accept="image/png, image/jpeg" name="picture" id="picture" value="<?= $row['picture']; ?>">
     </div><br>
   <div class="form-check">
     <input type="checkbox" class="form-check-input" id="exampleCheck1">

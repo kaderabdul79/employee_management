@@ -8,7 +8,7 @@ $conn = getConnection();
 $username = $_SESSION['username'];
 $password = $_SESSION['password'];
 $accounttype = $_SESSION['accounttype'];
-$sql = "select * from users where username='$username' and password='$password' and accounttype='$accounttype'";
+$sql = "select * from users where username='$username'";
 $result = mysqli_query($conn,$sql);
 $row = mysqli_fetch_assoc($result);
 ?>

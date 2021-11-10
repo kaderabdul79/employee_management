@@ -14,6 +14,7 @@ if(isset($_POST['EditProfile'])){
     $password = $_POST['password'];
     $email = $_POST['email'];
     $department = $_POST['department'];
+    
     if(isset($_POST['accounttype'])){
         $accounttype = $_POST['accounttype'];
     }else{
