@@ -8,6 +8,8 @@ if(isset($_POST['EditProfile'])){
     $password = $_POST['password'];
     $email = $_POST['email'];
     $department = $_POST['department'];
+    $picture = $_FILES['picture'];
+    
     if(isset($_POST['accounttype'])){
         $accounttype = $_POST['accounttype'];
         if($username == "" && $password == "" && $email == "" && $department == "" && $accounttype == ""){
@@ -23,16 +25,37 @@ if(isset($_POST['EditProfile'])){
                 echo "enter department";
             }elseif($accounttype == ""){
                 echo "select accounttype";
+            }elseif($picture['name'] == "" || $picture['size'] == 0){
+                echo "Upload Picture is Require*";
             }else{
+                $filesize = $picture['size'];
+                $filesizeinKB = $filesize/4096;
+                $filename = $picture['name'];
+                $filetype = $picture['type'];
+                $filetempname = $picture['tmp_name'];
+                if($filesizeinKB >= 100){
+                    echo "file size should be minimum";
+                }else{
+                    if($filetype == "image/png" || $filetype == "image/jpeg"){
+                        $path = 'Resources/picture/'.$filename;
+                        if(!move_uploaded_file($filetempname, $path)){
+                            echo "Error Occured!";
+                        }
+                
+                    }else{
+                        echo "file type should be Only PNJ and JPGE";
+                    }
+                }
                 $userinfo = [
                     'username' => $username,
                     'password' => $password,
                     'email' => $email,
                     'department' => $department,
-                    'accounttype' => $accounttype
+                    'accounttype' => $accounttype,
+                    'picture' => $filename
                 ];
                 $conn = getConnection();
-                $sql = "update users set username='{$userinfo['username']}',password='{$userinfo['password']}',email='{$userinfo['email']}',department='{$userinfo['department']}',accounttype='{$userinfo['accounttype']}' where id='{$id}'";
+                $sql = "update users set username='{$userinfo['username']}',password='{$userinfo['password']}',email='{$userinfo['email']}',department='{$userinfo['department']}',accounttype='{$userinfo['accounttype']}',picture='{$userinfo['picture']}' where id='{$id}'";
                 if(mysqli_query($conn,$sql)){
                     $_SESSION['username'] = $username;
                     $_SESSION['password'] = $password;

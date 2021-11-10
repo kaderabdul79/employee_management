@@ -16,7 +16,7 @@ $row = mysqli_fetch_assoc($result);
         <div class="row">
             <div class="col-md-8">
                 <h3>Edit Profile</h3>
-<form method="POST" action="updateOwnProfile.php?id=<?= $id ?>">
+<form method="POST" action="updateOwnProfile.php?id=<?= $id ?>" enctype="multipart/form-data">
      <div class="form-group">
          <label for="username">Username</label>
          <input type="text" class="form-control" placeholder="Username" name="username" value=<?= $row['username']; ?>>
@@ -60,6 +60,9 @@ $row = mysqli_fetch_assoc($result);
             </div> -->
     </div>
   <!-- end radio button -->
+  <div class="form-group">
+            Upload Picture <br><input type="file" accept="image/png, image/jpeg" name="picture" id="picture" value="">
+    </div><br>
   <div class="form-check">
     <input type="checkbox" class="form-check-input" id="exampleCheck1">
     <label class="form-check-label" for="exampleCheck1">Confirm to Update Profile?</label>

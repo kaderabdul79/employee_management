@@ -13,8 +13,8 @@ $result = mysqli_query($conn,$sql);
 $row = mysqli_fetch_assoc($result);
 ?>
 <!-- <?php 
-$targetDir = "Resources/picture";
-echo $targetDir.$row['picture']; ?> -->
+$targetDir = "../Resources/picture/";
+ echo $targetDir.$row['picture']; ?> -->
 <div class="card" style="width: 18rem;">
   <img class="card-img-top" src="<?php echo $row['picture']; ?>" width="250" height="350" alt="Card image cap">
   <div class="card-body">
