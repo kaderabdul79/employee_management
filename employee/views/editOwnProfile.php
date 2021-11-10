@@ -31,7 +31,7 @@ $row = mysqli_fetch_assoc($result);
   </div>
 <!-- dropdown for department -->
   <br><div class="form-group col-md-8">
-      <select id="inputState" class="form-control" name="department">
+      <select id="inputState" class="form-control" name="department" required>
         <!-- value=<?= $row['department']; ?> -->
             <option selected >select department</option>
             <option value="account">Account</option>
@@ -43,18 +43,21 @@ $row = mysqli_fetch_assoc($result);
     Accounttype <div class="form-check">
             <input class="form-check-input" type="radio" name="accounttype" value="employee" id="Radio1">
             <label class="form-check-label" for="Radio1">
-                <?= $row['accounttype']; ?>
-            </label><br>
-            <!-- <input class="form-check-input" type="radio" name="accounttype" value="admin" id="Radio2">
+                <?= ($row['accounttype'] == 'employee') ? 
+                '<div class="disabled">
+              <input class="form-check-input" type="radio" name="accounttype" id="exampleRadios3" value="admin" disabled>
+              <label class="form-check-label" for="exampleRadios3">Admin</label>
+            </div>'
+                : '<input class="form-check-input" type="radio" name="accounttype" value="employee" id="Radio2">
             <label class="form-check-label" for="Radio2">
-                Admin
-            </label> -->
-            <div class="disabled">
-    <input class="form-check-input" type="radio" name="accounttype" id="exampleRadios3" value="admin" disabled>
-     <label class="form-check-label" for="exampleRadios3">
-        Admin
-    </label>
-    </div>
+                Employee
+            </label>' ?>
+            </label><br>
+            
+            <!-- <div class="disabled">
+              <input class="form-check-input" type="radio" name="accounttype" id="exampleRadios3" value="admin" disabled>
+              <label class="form-check-label" for="exampleRadios3">Admin</label>
+            </div> -->
     </div>
   <!-- end radio button -->
   <div class="form-check">
