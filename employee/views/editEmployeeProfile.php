@@ -5,10 +5,7 @@ include('master.php');
 include('header.php');
 $id = $_GET['id'];
 $conn = getConnection();
-$username = $_SESSION['username'];
-$password = $_SESSION['password'];
-$accounttype = $_SESSION['accounttype'];
-$sql = "select * from users where username='$username' and password='$password' and accounttype='$accounttype'";
+$sql = "select * from users where id='$id'";
 $result = mysqli_query($conn,$sql);
 $row = mysqli_fetch_assoc($result);
 ?>
@@ -16,7 +13,7 @@ $row = mysqli_fetch_assoc($result);
         <div class="row">
             <div class="col-md-8">
                 <h3>Edit Profile</h3>
-<form method="POST" action="updateOwnProfile.php?id=<?= $id ?>">
+<form method="POST" action="updateEmployeeProfile.php?id=<?= $id ?>">
      <div class="form-group">
          <label for="username">Username</label>
          <input type="text" class="form-control" placeholder="Username" name="username" value=<?= $row['username']; ?>>
