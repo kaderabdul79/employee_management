@@ -4,11 +4,9 @@ session_start();
 require_once('db.php');
 include('master.php');
 include('header.php');
+$id = $_GET['id'];
 $conn = getConnection();
-$username = $_SESSION['username'];
-$password = $_SESSION['password'];
-$accounttype = $_SESSION['accounttype'];
-$sql = "select * from users where username='$username' and password='$password' and accounttype='$accounttype'";
+$sql = "select * from users where id='$id'";
 $result = mysqli_query($conn,$sql);
 $row = mysqli_fetch_assoc($result);
 ?>
