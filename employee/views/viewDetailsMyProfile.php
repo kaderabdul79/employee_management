@@ -12,8 +12,11 @@ $sql = "select * from users where username='$username' and password='$password' 
 $result = mysqli_query($conn,$sql);
 $row = mysqli_fetch_assoc($result);
 ?>
+<!-- <?php 
+$targetDir = "Resources/picture";
+echo $targetDir.$row['picture']; ?> -->
 <div class="card" style="width: 18rem;">
-  <img class="card-img-top" src="https://cdn.elearningindustry.com/wp-content/uploads/2019/10/4-Essential-Employee-Satisfaction-KPIs-To-Evaluate-Your-Microlearning-Strategy.jpg" alt="Card image cap">
+  <img class="card-img-top" src="<?php echo $row['picture']; ?>" width="250" height="350" alt="Card image cap">
   <div class="card-body">
     <h5 class="card-title">My Profile</h5>
   </div>

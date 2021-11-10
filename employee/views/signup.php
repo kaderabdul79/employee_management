@@ -54,7 +54,7 @@
             </label>
         </div><br>
         <div class="form-group">
-            Upload Picture<input type="file" name="picture" id="picture" value="">
+            Upload Picture<input type="file" accept="image/png, image/jpeg" name="picture" id="picture" value="">
         </div><br>
         <div class="form-group">
             <input type="submit" value="signup" name="signup" class="btn btn-success">
