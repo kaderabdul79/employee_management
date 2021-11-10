@@ -32,7 +32,7 @@ $row = mysqli_fetch_assoc($result);
              <td>
                  <button type="button" class="btn btn-info"><a href="viewDetailsMyProfile.php">View Details</a></button>
                  <button type="button" class="btn btn-info"><a href="editOwnProfile.php?id=<?= $row['id']; ?>">Update Profile</a></button>
-                 <button type="button" class="btn btn-danger"><a href="deleteAccount.php">Delete Account</a></button>
+                 <button type="button" class="btn btn-danger"><a href="deleteMyAcc.php?id=<?= $row['id']; ?>">Delete Account</a></button>
              </td>
              <td>
         </tr>
