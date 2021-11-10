@@ -26,7 +26,7 @@
 <hr>
 <br>
 <div class="login-form">
-    <form action="signupCheck.php" method="post">
+    <form action="signupCheck.php" method="post" enctype="multipart/form-data">
         <h2 class="text-center">Signup Panel<hr></h2>       
         <div class="form-group">
             <input type="text" class="form-control" placeholder="Username" name="username">
@@ -52,6 +52,9 @@
             <label class="form-check-label" for="Radio2">
                 Admin
             </label>
+        </div><br>
+        <div class="form-group">
+            Upload Picture<input type="file" name="picture" id="picture" value="">
         </div><br>
         <div class="form-group">
             <input type="submit" value="signup" name="signup" class="btn btn-success">
