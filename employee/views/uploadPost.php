@@ -10,7 +10,7 @@ include('header.php');
       <!-- text area start -->
       <div class="form-group">
         <label for="exampleFormControlTextarea1">Post Description</label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        <textarea class="form-control" name="description" id="exampleFormControlTextarea1" rows="3"></textarea>
       </div>
       <!-- text area end -->
       <!-- upload post thumbnail -->
@@ -27,23 +27,23 @@ include('header.php');
  <!-- start tags radio button -->
   Select Tags <br>
         <div class="form-check">
-            <input class="form-check-input" type="radio" name="" value="" id="Radio1">
+            <input class="form-check-input" type="radio" name="viralpost" value="" id="Radio1">
             <label class="form-check-label" for="Radio1">
                 viralpost
             </label><br>
-            <input class="form-check-input" type="radio" name="" value="" id="Radio1">
-            <label class="form-check-label" for="Radio1">
+            <input class="form-check-input" type="radio" name="bangladesh" value="" id="Radio2">
+            <label class="form-check-label" for="Radio2">
                 bangladesh
             </label><br>
-            <input class="form-check-input" type="radio" name="" value="" id="Radio1">
-            <label class="form-check-label" for="Radio1">
+            <input class="form-check-input" type="radio" name="facebook" value="" id="Radio3">
+            <label class="form-check-label" for="Radio3">
                 facebook
             </label><br>
-            <input class="form-check-input" type="radio" name="" value="" id="Radio2">
-            <label class="form-check-label" for="Radio2">
+            <input class="form-check-input" type="radio" name="admissiontest" value="" id="Radio4">
+            <label class="form-check-label" for="Radio4">
                 admissiontest
             </label>
         </div><br>
   <!-- end tags radio button -->
-  <input type="submit" name="uploadpost" value="uploadpost">
+  <input type="submit" name="uploadpost" value="Publish Post">
 </form>
