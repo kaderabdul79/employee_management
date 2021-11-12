@@ -25,8 +25,15 @@
                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                     </form>
                     <li>
-                        <?php echo "Hello"." ".$_COOKIE['username']; ?>
-                        <!-- <?php echo "Hello"." ".$_SESSION['username']; ?> -->
+                        <?php 
+                         if(isset($_COOKIE['username'])){
+                            echo "Hello"." ". $_COOKIE['username'];
+                         }else{
+                             echo 'Hello';
+                         }
+                        ?>
+                        <!-- <?php isset($_COOKIE['username']) ? "Hello"." ". $_COOKIE['username'] : 'Hello' ?> -->
+                        
                         <button type="button" class="btn btn-warning"><a class="" href="logout.php">Logout</a></button>
                     </li>
                     </ul>
