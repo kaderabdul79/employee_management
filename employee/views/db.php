@@ -3,7 +3,7 @@
 	$dbuser = 'root';
 	$dbpass = '';
 	$host 	= 'localhost';
-	$dbname	= 'employeemanagement';
+	$dbname	= 'employee_management';
 
     // if($conn = mysqli_connect($host, $dbuser, $dbpass, $dbname)){
     //     echo "success";
