@@ -1,5 +1,5 @@
 <?php 
-require_once('db.php');
+require_once('../../Models/db.php');
 include('master.php');
 include('header.php');
 $conn = getConnection();
@@ -36,7 +36,7 @@ $sql = "select * from users where accounttype='employee'";
              <td>
                  <button type="button" class="btn btn-info"><a href="viewDetailsEmployeeProfile.php?id=<?= $employeesInfo[$i]['id']; ?>">View Profile</a></button>
                  <button type="button" class="btn btn-info"><a href="editEmployeeProfile.php?id=<?= $employeesInfo[$i]['id']; ?>">Update Profile</a></button>
-                <button type="button" class="btn btn-danger"><a href="deleteEmployeeAcc.php?id=<?= $employeesInfo[$i]['id']; ?>">Delete Account</a></button>
+                <button type="button" class="btn btn-danger"><a href="../../Controllers/deleteEmployeeAcc.php?id=<?= $employeesInfo[$i]['id']; ?>">Delete Account</a></button>
              </td>
              <td>
         </tr><?php  } ?>

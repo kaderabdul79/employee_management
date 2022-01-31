@@ -26,9 +26,7 @@
 <hr>
 <br>
 <div class="login-form">
-    <p></p>
-    <button id="add">Add me</button>
-    <form action="../Views/loginCheck.php" method="post">
+    <form action="../../Controllers/loginCheck.php" method="post">
         <h2 class="text-center">Log in Panel<hr></h2>       
         <div class="form-group" id="uname">
             <input type="text" class="form-control" placeholder="Username" name="username" id="username">
@@ -52,6 +50,6 @@
         </div>
     </form>
 </div>
-<script src="signinJsValidation.js"></script>
+<!-- <script src="../js/signinJsValidation.js"></script> -->
 </body>
 </html>

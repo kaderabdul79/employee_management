@@ -1,18 +1,15 @@
 
 <?php
 session_start();
-require_once('db.php');
+require_once('../../Models/db.php');
 include('master.php');
 include('header.php');
+$id = $_GET['id'];
 $conn = getConnection();
-$username = $_SESSION['username'];
-$password = $_SESSION['password'];
-$accounttype = $_SESSION['accounttype'];
-$sql = "select * from users where username='$username'";
+$sql = "select * from users where id='$id'";
 $result = mysqli_query($conn,$sql);
 $row = mysqli_fetch_assoc($result);
 ?>
-
 <div class="card" style="width: 18rem;">
   <img class="card-img-top" src="<?php echo $row['picture']; ?>" width="250" height="350" alt="Card image cap">
   <div class="card-body">
@@ -26,7 +23,7 @@ $row = mysqli_fetch_assoc($result);
     <li class="list-group-item"><b>Password</b> :<?= $row['password']; ?></li>
   </ul>
   <div class="card-body">
-    <button type="button" class="btn btn-info"><a href='editOwnProfile.php?id=<?= $row['id']; ?>'>Edit Profile</a></button><br><br>
+    <button type="button" class="btn btn-info"><a href="editEmployeeProfile.php?id=<?= $row['id'] ?>">Edit Profile</a></button><br><br>
     <button type="button" class="btn btn-info"><a href="viewOwnProfile.php">Download Salary File</a></button>
   </div>
 </div><style>

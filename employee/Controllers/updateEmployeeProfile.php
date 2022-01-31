@@ -2,7 +2,7 @@
 <?php
 session_start();
 $id = $_GET['id'];
-require_once('db.php');
+require_once('../Models/db.php');
 $id = $_GET['id'];
 $conn = getConnection();
 $sql = "select * from users where id='$id'";

@@ -14,9 +14,9 @@
   body{background-color:#343a40}
   h1{color: #fff;}
   hr{border:2px solid #222}
-  .login-form{width:340px;margin:20px auto}
-  .login-form form{margin-bottom:15px;background:#f7f7f7;box-shadow:0 2px 2px rgba(0,0,0,.3);padding:30px}
-  .login-form h2{margin:0 0 15px}
+  .registration-form{width:340px;margin:20px auto}
+  .registration-form form{margin-bottom:15px;background:#f7f7f7;box-shadow:0 2px 2px rgba(0,0,0,.3);padding:30px}
+  .registration-form h2{margin:0 0 15px}
   .form-control, .btn{min-height:38px;border-radius:2px;font-size:15px;font-weight:bold;}
 
   </style>
@@ -25,8 +25,8 @@
 <center><h1>Employee Management System</h1></center>
 <hr>
 <br>
-<div class="login-form">
-    <form action="signupCheck.php" method="post" enctype="multipart/form-data">
+<div class="registration-form">
+    <form action="../../Controllers/signUpCheck.php" method="POST" enctype="multipart/form-data">
         <h2 class="text-center">Signup Panel<hr></h2>       
         <div class="form-group">
             <input type="text" class="form-control" placeholder="Username" name="username">
@@ -58,7 +58,7 @@
         </div><br>
         <div class="form-group">
             <input type="submit" value="signup" name="signup" class="btn btn-success">
-            <a href="signin.php">Login</a>
+            <a href="signin.php">login</a>
         </div>
     </form>
 </div>

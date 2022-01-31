@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-require_once('db.php');
+require_once('../Models/db.php');
 if(isset($_POST['login'])){
     
     $password = $_POST['password'];
@@ -33,7 +33,7 @@ if(isset($_POST['login'])){
                 $result = mysqli_query($conn,$sql);
                 $row = mysqli_fetch_assoc($result);
                 if($row){
-                    header('Location: homepage.php');
+                    header('Location: ../resources/views/homepage.php');
 
                 }else{
                     echo "Info is wrong! try again";

@@ -1,7 +1,7 @@
 <?php
 
 // session_start();
-require_once('db.php');
+require_once('../Models/db.php');
 if(isset($_POST['signup'])){
     $username = $_POST['username'];
     $password = $_POST['password'];
@@ -36,7 +36,7 @@ if(isset($_POST['signup'])){
                     echo "file size should be minimum";
                 }else{
                     if($filetype == "image/png" || $filetype == "image/jpeg"){
-                        $path = 'Resources/picture/'.$filename;
+                        $path = 'resources/images/forLocalServer'.$filename;
                         if(!move_uploaded_file($filetempname, $path)){
                             echo "Error Occured!";
                         }

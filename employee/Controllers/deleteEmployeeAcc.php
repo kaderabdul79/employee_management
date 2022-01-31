@@ -1,5 +1,5 @@
 <?php
-require_once('db.php');
+require_once('../Models/db.php');
 $conn = getConnection();
 $id = $_GET['id'];
 $sql = "delete from users where id='$id'";

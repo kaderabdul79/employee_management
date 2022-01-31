@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once('db.php');
+require_once('../../Models/db.php');
 include('master.php');
 include('header.php');
 $conn = getConnection();

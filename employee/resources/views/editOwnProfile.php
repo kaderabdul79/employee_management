@@ -1,11 +1,14 @@
 <?php
 session_start();
-require_once('db.php');
+require_once('../../Models/db.php');
 include('master.php');
 include('header.php');
 $id = $_GET['id'];
 $conn = getConnection();
-$sql = "select * from users where id='$id'";
+$username = $_SESSION['username'];
+$password = $_SESSION['password'];
+$accounttype = $_SESSION['accounttype'];
+$sql = "select * from users where username='$username' and password='$password' and accounttype='$accounttype'";
 $result = mysqli_query($conn,$sql);
 $row = mysqli_fetch_assoc($result);
 ?>
@@ -13,7 +16,7 @@ $row = mysqli_fetch_assoc($result);
         <div class="row">
             <div class="col-md-8">
                 <h3>Edit Profile</h3>
-<form method="POST" action="updateEmployeeProfile.php?id=<?= $id ?>"  enctype="multipart/form-data">
+<form method="POST" action="../../Controllers/updateOwnProfile.php?id=<?= $id ?>" enctype="multipart/form-data">
      <div class="form-group">
          <label for="username">Username</label>
          <input type="text" class="form-control" placeholder="Username" name="username" value=<?= $row['username']; ?>>
@@ -38,25 +41,28 @@ $row = mysqli_fetch_assoc($result);
     </div><br>
 <!-- dropdown for department end -->
     Accounttype <div class="form-check">
-            <input class="form-check-input" selected type="radio" name="accounttype" value="employee" id="Radio1">
+            <input class="form-check-input" type="radio" name="accounttype" value="employee" id="Radio1">
             <label class="form-check-label" for="Radio1">
-                <?= $row['accounttype']; ?>
-            </label><br>
-            <!-- <input class="form-check-input" type="radio" name="accounttype" value="admin" id="Radio2">
+                <?= ($row['accounttype'] == 'employee') ? 
+                '<div class="disabled">
+              <input class="form-check-input" type="radio" name="accounttype" id="exampleRadios3" value="admin" disabled>
+              <label class="form-check-label" for="exampleRadios3">Admin</label>
+            </div>'
+                : '<input class="form-check-input" type="radio" name="accounttype" value="employee" id="Radio2">
             <label class="form-check-label" for="Radio2">
-                Admin
-            </label> -->
-            <div class="disabled">
-    <input class="form-check-input" type="radio" name="accounttype" id="exampleRadios3" value="admin" disabled>
-     <label class="form-check-label" for="exampleRadios3">
-        Admin
-    </label>
+                Employee
+            </label>' ?>
+            </label><br>
+            
+            <!-- <div class="disabled">
+              <input class="form-check-input" type="radio" name="accounttype" id="exampleRadios3" value="admin" disabled>
+              <label class="form-check-label" for="exampleRadios3">Admin</label>
+            </div> -->
     </div>
-    </div>
-    <div class="form-group">
+  <!-- end radio button -->
+  <div class="form-group">
             Upload Picture <br><input type="file" accept="image/png, image/jpeg" name="picture" id="picture" value="<?= $row['picture']; ?>">
     </div><br>
-  <!-- end radio button -->
   <div class="form-check">
     <input type="checkbox" class="form-check-input" id="exampleCheck1">
     <label class="form-check-label" for="exampleCheck1">Confirm to Update Profile?</label>
