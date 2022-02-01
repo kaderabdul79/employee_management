@@ -34,7 +34,7 @@ if(isset($_POST['login'])){
                 $row = mysqli_fetch_assoc($result);
                 if($row){
                     if($accounttype == 'admin'){
-                        header('Location: dashboard.php');
+                        header('Location: ../resources/views/Admin/dashboard.php');
                     }else{
                         header('Location: ../resources/views/homepage.php');
                     }
