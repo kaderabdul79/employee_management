@@ -1,7 +1,8 @@
 <?php
 
 // session_start();
-require_once('../Models/db.php');
+// require_once('../Models/db.php');
+require_once('../Models/auth.php');
 if(isset($_POST['signup'])){
     $username = $_POST['username'];
     $password = $_POST['password'];
@@ -36,7 +37,7 @@ if(isset($_POST['signup'])){
                     echo "file size should be minimum";
                 }else{
                     if($filetype == "image/png" || $filetype == "image/jpeg"){
-                        $path = 'resources/images/forLocalServer'.$filename;
+                        $path = '../resources/images/forLocalServer/'.$filename;
                         if(!move_uploaded_file($filetempname, $path)){
                             echo "Error Occured!";
                         }
@@ -53,13 +54,8 @@ if(isset($_POST['signup'])){
                     'accounttype' => $accounttype,
                     'picture' => $filename
                 ];
-                $conn = getConnection();
-                $sql = "insert into users values('','{$userinfo['username']}','{$userinfo['password']}','{$userinfo['email']}','{$userinfo['department']}','{$userinfo['accounttype']}','{$userinfo['picture']}')";
-                if(mysqli_query($conn,$sql)){
-                    header('Location: ../resources/views/signin.php');
-                }else{
-                    echo "failed to insert";
-                }
+                //created login func in auth.php. just calling from here and pass data
+                $loginData = login($userinfo);
                 
             }
         }
