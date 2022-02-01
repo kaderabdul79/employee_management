@@ -56,7 +56,7 @@ if(isset($_POST['signup'])){
                 $conn = getConnection();
                 $sql = "insert into users values('','{$userinfo['username']}','{$userinfo['password']}','{$userinfo['email']}','{$userinfo['department']}','{$userinfo['accounttype']}','{$userinfo['picture']}')";
                 if(mysqli_query($conn,$sql)){
-                    header('Location: signin.php');
+                    header('Location: ../resources/views/signin.php');
                 }else{
                     echo "failed to insert";
                 }

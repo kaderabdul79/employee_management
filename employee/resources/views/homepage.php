@@ -26,11 +26,11 @@
                 <button type="button" class="btn btn-info"><a href="viewProfile.php">View Profile</a></button>
                 <button type="button" class="btn btn-info"><a href="viewEmployees.php">View Employees</a></button>
                 <button type="button" class="btn btn-info"><a href="uploadPost.php">Upload Post</a></button>
-                <button type="button" class="btn btn-info"><a href="viewAllPosts.php">View All Posts</a></button>
+                <button type="button" id="viewAllPosts" class="btn btn-info"><a href="viewAllPosts.php">View All Posts</a></button>
             </div>
         </div>
     </div>
-    
+<script src="../js/generatePosts.php"></script>  
 </body>
 </html>
 

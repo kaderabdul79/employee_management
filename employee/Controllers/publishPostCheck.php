@@ -1,5 +1,5 @@
 <?php
-require_once('db.php');
+require_once('../Models/db.php');
 if(isset($_POST['uploadpost'])){
     $posttitle = $_POST['posttitle'];
     $description = $_POST['description'];
@@ -22,13 +22,19 @@ if(isset($_POST['uploadpost'])){
 
         $conn = getConnection();
         $sql = "insert into posts values('','{$postinfo['title']}','{$postinfo['thumbnail']}','{$postinfo['tags']}','{$postinfo['author']}','{$postinfo['description']}','','3-9-2021')";
+        print_r(mysqli_query($conn,$sql));
         if(mysqli_query($conn,$sql)){
-            header('Location: homepage.php');
+            echo "ddsc";
         }else{
             echo "failed to insert";
-            print_r($sql);
-        
         }
+        // if(mysqli_query($conn,$sql)){
+        //     header('Location: homepage.php');
+        // }else{
+        //     echo "failed !";
+        //     print_r($sql);
+        
+        // }
     //     $tags = [
     //     'viralpost' => $viralpost,
     //     'admissiontest' => $admissiontest,

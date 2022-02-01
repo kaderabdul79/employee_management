@@ -2,7 +2,7 @@
 include('master.php');
 include('header.php');
 ?>
-<form method="POST" action="publishPostCheck.php" enctype="multipart/form-data">
+<form method="POST" action="../../Controllers/publishPostCheck.php" enctype="multipart/form-data">
      <div class="form-group">
          <label for="posttitle">Post Title</label>
          <input type="text" class="form-control" placeholder="posttitle" name="posttitle" value="">

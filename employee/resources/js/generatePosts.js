@@ -1,8 +1,3 @@
-<?php
-
-?>
-<script>
-
 let viewAllPosts = document.getElementById('viewAllPosts')
 
 viewAllPosts.addEventListener('click',fetchPosts())
@@ -12,5 +7,3 @@ function fetchPosts(){
     .then(res => res.json())
     .then(data => console.log(data))
 }
-
-</script>

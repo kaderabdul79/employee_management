@@ -33,8 +33,11 @@ if(isset($_POST['login'])){
                 $result = mysqli_query($conn,$sql);
                 $row = mysqli_fetch_assoc($result);
                 if($row){
-                    header('Location: ../resources/views/homepage.php');
-
+                    if($accounttype == 'admin'){
+                        header('Location: dashboard.php');
+                    }else{
+                        header('Location: ../resources/views/homepage.php');
+                    }
                 }else{
                     echo "Info is wrong! try again";
 

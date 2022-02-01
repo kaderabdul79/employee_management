@@ -10,6 +10,6 @@
 		setcookie('username', $_SESSION['username'], time()-10, '/');
 	}
 	
-	header('location: signin.php');
+	header('location: ../resources/views/signin.php');
 
 ?>
