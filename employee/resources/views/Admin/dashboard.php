@@ -40,16 +40,19 @@
     <link href="sidebars.css" rel="stylesheet">
   </head>
   <body>
-
-
 <main>
 
+<div class="d-flex flex-shrink-0 p-3 text-black bg-white" style="width: 100%;height: 660px">
   <!-- sidabar start -->
   <?php include 'sidebar.php'; ?>
   <!-- sidebar end -->
-  
-  <!--  -->
-dcdc
+
+  <!-- main body start -->
+  <div class="d-flex flex-column p-3 " style="height: 660px">
+      write your name
+   </div>
+  <!-- main body end -->
+</div>
 
 </main>
 
