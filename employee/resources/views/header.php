@@ -34,7 +34,7 @@
                         ?>
                         <!-- <?php isset($_COOKIE['username']) ? "Hello"." ". $_COOKIE['username'] : 'Hello' ?> -->
                         
-                        <button type="button" class="btn btn-warning"><a class="" href="logout.php">Logout</a></button>
+                        <button type="button" class="btn btn-warning"><a class="" href="../../Controllers/logout.php">Logout</a></button>
                     </li>
                     </ul>
                 </div>
