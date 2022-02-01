@@ -1,3 +1,8 @@
+<!-- <script>
+    let qforAll = document.getElementById('forAll')
+    console.log(qforAll)
+</script> -->
+
 <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 280px;height: 660px">
     <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
       <span class="fs-4">Dashboard</span>
@@ -8,10 +13,12 @@
         <a href="#" class="nav-link active" aria-current="page">Home</a>
       </li>
       <li class="nav-item mb-2">
-        <a href="#" class="nav-link active" aria-current="page">Edit Profile</a>
+        <!-- <a href="editOwnProfile.php" class="nav-link active" aria-current="page" id="edit">Edit Profile</a>
+     -->
+     <a href="" class="nav-link active" aria-current="page" id="edit">Edit Profile</a>
       </li>
       <li class="nav-item mb-2">
-        <a href="#" class="nav-link active" aria-current="page">Add Education</a>
+        <a href="#" class="nav-link active" aria-current="page" id="education">Add Education</a>
       </li>
       <li class="nav-item mb-2">
         <a href="#" class="nav-link active" aria-current="page">Employee List</a>
@@ -33,3 +40,4 @@
       </ul>
     </div>
   </div>
+  <!-- <script src="myscript.js"></script> -->

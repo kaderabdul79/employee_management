@@ -18,7 +18,6 @@
 
 <meta name="theme-color" content="#7952b3">
 
-
     <style>
       .bd-placeholder-img {
         font-size: 1.125rem;
@@ -34,10 +33,7 @@
         }
       }
     </style>
-
-    
     <!-- Custom styles for this template -->
-    <link href="sidebars.css" rel="stylesheet">
   </head>
   <body>
 <main>
@@ -48,8 +44,23 @@
   <!-- sidebar end -->
 
   <!-- main body start -->
-  <div class="d-flex flex-column p-3 " style="height: 660px">
-      write your name
+  <div class="d-flex flex-column p-3" id="showallForm" style="">
+      <!-- <div id="forAll">
+
+      </div> -->
+      <script>
+        let edit = document.getElementById('edit')
+        edit.addEventListener('click',()=>{
+        edit.href='editOwnProfile.php'
+        })
+
+        let education = document.getElementById('education')
+        education.addEventListener('click',()=>{
+            education.href='editOwnProfile.php'
+        })
+        //console.log(edit)
+      </script>    
+     <!-- <script>editprofile()</script> -->
    </div>
   <!-- main body end -->
 </div>
@@ -58,5 +69,6 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 <script src="sidebars.js"></script>
+<script src="myscript.js"></script>
   </body>
 </html>
