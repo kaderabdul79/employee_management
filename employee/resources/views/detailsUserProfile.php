@@ -1,16 +1,11 @@
 
 <?php
 session_start();
-require_once('../../Models/db.php');
+require_once('../../Models/auth.php');
 include('master.php');
 include('header.php');
-$conn = getConnection();
-$username = $_SESSION['username'];
-$password = $_SESSION['password'];
-$accounttype = $_SESSION['accounttype'];
-$sql = "select * from users where username='$username'";
-$result = mysqli_query($conn,$sql);
-$row = mysqli_fetch_assoc($result);
+// returns an array and from here passing the info for match to the db.
+$row = commonForAllUser($_SESSION['username'],$_SESSION['password']);
 ?>
 
 <div class="card" style="width: 18rem;">

@@ -28,7 +28,7 @@ $row = viewProfile($info['id'])
              <td><?= $row['department']; ?></td>
              <td><?= $row['accounttype']; ?></td>
              <td>
-                 <button type="button" class="btn btn-info"><a href="viewDetailsMyProfile.php">View Details</a></button>
+                 <button type="button" class="btn btn-info"><a href="detailsUserProfile.php">View Details</a></button>
                  <button type="button" class="btn btn-info"><a href="editOwnProfile.php?id=<?= $row['id']; ?>">Update Profile</a></button>
                  <button type="button" class="btn btn-danger"><a href="deleteMyAcc.php?id=<?= $row['id']; ?>">Delete Account</a></button>
              </td>
