@@ -19,8 +19,8 @@ if(isset($_POST['login'])){
             }elseif(isset($username,$password)){
                 // using sessions
                 // $_SESSION['flag'] = true;
-                // $_SESSION['username'] = $username;
-                // $_SESSION['password'] = $password;
+                $_SESSION['username'] = $username;
+                $_SESSION['password'] = $password;
                 // $_SESSION['accounttype'] = $accounttype;
                 // using cookies
                 // setcookie('username', $username, time()+3600, '/');

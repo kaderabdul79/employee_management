@@ -29,6 +29,21 @@ function login($userinfo){
     }
 }
 
+function viewProfile($id){
+    $conn = getConnection();
+    $sql = "select * from users where id='$id'";
+    $result = mysqli_query($conn,$sql);
+    $row = mysqli_fetch_assoc($result);
+    return $row;
+}
+
+function commonForAllUser($username,$password){
+    $conn = getConnection();
+    $sql = "select * from users where username='$username' and password='$password'";
+    $result = mysqli_query($conn,$sql);
+    $row = mysqli_fetch_assoc($result);
+    return $row;
+}
 
 
 ?>

@@ -1,15 +1,13 @@
 <?php
 session_start();
-require_once('../../Models/db.php');
+require_once('../../Models/auth.php');
 include('master.php');
 include('header.php');
-$conn = getConnection();
+
 $username = $_SESSION['username'];
 $password = $_SESSION['password'];
-$accounttype = $_SESSION['accounttype'];
-$sql = "select * from users where username='$username' and password='$password' and accounttype='$accounttype'";
-$result = mysqli_query($conn,$sql);
-$row = mysqli_fetch_assoc($result);
+$info = commonForAllUser($username,$password);
+$row = viewProfile($info['id'])
 ?>
 <div class="container">
         <div class="row">
@@ -25,7 +23,7 @@ $row = mysqli_fetch_assoc($result);
     <tr>
   </thead>
   <tbody>
-    <tr>
+          <tr>
              <td><?= $row['username']; ?></td>
              <td><?= $row['department']; ?></td>
              <td><?= $row['accounttype']; ?></td>
