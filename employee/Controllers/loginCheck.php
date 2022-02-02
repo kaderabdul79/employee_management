@@ -17,8 +17,8 @@ if(isset($_POST['login'])){
             }elseif($password == ""){
                 echo "enter password";
             }elseif(isset($username,$password)){
-                // using sessions
-                // $_SESSION['flag'] = true;
+                // using sessions to get available data across this project app, until user closes the browser.
+                $_SESSION['flag'] = true;
                 $_SESSION['username'] = $username;
                 $_SESSION['password'] = $password;
                 // $_SESSION['accounttype'] = $accounttype;
