@@ -54,9 +54,15 @@ if(isset($_POST['signup'])){
                     'accounttype' => $accounttype,
                     'picture' => $filename
                 ];
+
                 //created login func in auth.php. just calling from here and pass data
-                $loginData = login($userinfo);
-                
+                $status = signup($userinfo);
+                print_r($status);
+                if($status){
+                    header('Location: ../resources/views/signin.php');
+                }else{
+                    echo "failed to insert!";
+                }
             }
         }
     }else{

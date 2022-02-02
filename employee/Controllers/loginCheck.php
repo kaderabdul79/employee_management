@@ -28,20 +28,22 @@ if(isset($_POST['login'])){
 				setcookie('accounttype', $accounttype, time()+3600, '/');
                 setcookie('flag', 'true', time()+3600, '/');
 
-                $conn = getConnection();
-                $sql = "select * from users where username='$username' and password='$password' and accounttype='$accounttype'";
-                $result = mysqli_query($conn,$sql);
-                $row = mysqli_fetch_assoc($result);
-                if($row){
-                    if($accounttype == 'admin'){
-                        header('Location: ../resources/views/Admin/dashboard.php');
-                    }else{
-                        header('Location: ../resources/views/homepage.php');
-                    }
-                }else{
-                    echo "Info is wrong! try again";
+                
+                $userinfo = [
+                    'username' => $username,
+                    'password' => $password,
+                    'accounttype' => $accounttype
+                ];
 
-                }
+                $loginData = login($userinfo);
+                print_r($loginData);
+
+                // if($loginData){
+                //     echo "true";
+                // }else{
+                //     echo "Info is wrong! try again";
+
+                // }
                 
             }
             else{
