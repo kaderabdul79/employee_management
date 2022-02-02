@@ -57,7 +57,6 @@ if(isset($_POST['signup'])){
 
                 //created login func in auth.php. just calling from here and pass data
                 $status = signup($userinfo);
-                print_r($status);
                 if($status){
                     header('Location: ../resources/views/signin.php');
                 }else{

@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-require_once('../Models/db.php');
+require_once('../Models/auth.php');
 if(isset($_POST['login'])){
     
     $password = $_POST['password'];
@@ -18,15 +18,15 @@ if(isset($_POST['login'])){
                 echo "enter password";
             }elseif(isset($username,$password)){
                 // using sessions
-                $_SESSION['flag'] = true;
-                $_SESSION['username'] = $username;
-                $_SESSION['password'] = $password;
-                $_SESSION['accounttype'] = $accounttype;
+                // $_SESSION['flag'] = true;
+                // $_SESSION['username'] = $username;
+                // $_SESSION['password'] = $password;
+                // $_SESSION['accounttype'] = $accounttype;
                 // using cookies
-                setcookie('username', $username, time()+3600, '/');
-				setcookie('password', $password, time()+3600, '/');
-				setcookie('accounttype', $accounttype, time()+3600, '/');
-                setcookie('flag', 'true', time()+3600, '/');
+                // setcookie('username', $username, time()+3600, '/');
+				// setcookie('password', $password, time()+3600, '/');
+				// setcookie('accounttype', $accounttype, time()+3600, '/');
+                // setcookie('flag', 'true', time()+3600, '/');
 
                 
                 $userinfo = [
@@ -34,16 +34,14 @@ if(isset($_POST['login'])){
                     'password' => $password,
                     'accounttype' => $accounttype
                 ];
-
-                $loginData = login($userinfo);
-                print_r($loginData);
-
-                // if($loginData){
-                //     echo "true";
-                // }else{
-                //     echo "Info is wrong! try again";
-
-                // }
+                
+                $status = login($userinfo);
+                // print_r($status);
+                if($status){
+                    header('Location: ../resources/views/homepage.php');
+                }else{
+                    echo "failed to login!";
+                }
                 
             }
             else{
